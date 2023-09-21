@@ -64,7 +64,7 @@ void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
 void f_pstr(stack_t **head, unsigned int counter);
 void f_pchar(stack_t **head, unsigned int counter);
-void f_mod(stack_t **head, unsigned int counter);
+void hadakmod(stack_t **head, unsigned int counter);
 void dreb(stack_t **head, unsigned int counter);
 void qsem(stack_t **head, unsigned int counter);
 void naqiss(stack_t **head, unsigned int counter);

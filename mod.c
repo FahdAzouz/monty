@@ -1,12 +1,12 @@
 #include "monty.h"
 /**
- * f_mod - computes the rest of the division of the second
+ * hadakmod - computes the rest of the division of the second
  * element of the stack by the top element of the stack.
  * @head: stack head pointer
  * @counter: line number
  * Return: nothing
 */
-void f_mod(stack_t **head, unsigned int counter)
+void hadakmod(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
 	int len = 0, tmp;
