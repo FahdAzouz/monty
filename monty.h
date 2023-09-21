@@ -74,7 +74,7 @@ void f_swap(stack_t **head, unsigned int counter);
 void f_pop(stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void f_pint(stack_t **head, unsigned int number);
+void pint_AZ(stack_t **head, unsigned int number);
 void f_pall(stack_t **head, unsigned int number);
 void f_push(stack_t **head, unsigned int number);
 char  *clean_line(char *content);
