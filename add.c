@@ -1,30 +1,30 @@
 #include "monty.h"
 
 /**
- * add - sum the top two elements of the stack
- * @stack: - pointer to stack
+ * add - adds top 2 elements
+ * @stack: - stack
  * @line_num: - line number
  *
- * Return: - pointer to stack with sum of top two elements
+ * Return: stack
  */
 stack_t *add(stack_t **stack, unsigned int line_num)
 {
-	int summ = 0;
-	stack_t *h;
+	stack_t *head;
+	int sum = 0;
 
-	h = *stack;
-	if (h->next == NULL || h == NULL)
+	head = *stack;
+	if (head == NULL || head->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	summ = (h->next->n) + (h->n);
+	sum = (head->n) + (head->next->n);
 	*stack = (*stack)->next;
-	free(h);
+	free(head);
 
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
-	(*stack)->n = summ;
+	(*stack)->n = sum;
 	return (*stack);
 }

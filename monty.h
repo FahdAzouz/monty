@@ -2,26 +2,21 @@
 #define _MONTY_H_
 
 #define _XOPEN_SOURCE 700
-#define USAGE "USAGE: monty file\n"
-#define FILE_ERROR "Error: Can't open file %s\n"
-#define UNKNOWN "L%u: unknown instruction %s\n"
-#define MALLOC_FAIL "Error: malloc failed\n"
-#define PUSH_FAIL "L%u: usage: push integer\n"
-/* Libraries */
 
-#include <ctype.h>
+/* Libraries */
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <string.h>
-#include <sys/stat.h>
+#include <ctype.h>
 
-/* global variables */
+/* Declaration of the global variables */
 extern int token;
 
-/* Data Structures */
+/* Structures */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -53,21 +48,27 @@ typedef struct instruction_s
 	stack_t *(*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+#define USAGE "USAGE: monty file\n"
+#define FILE_ERROR "Error: Can't open file %s\n"
+#define UNKNOWN "L%u: unknown instruction %s\n"
+#define MALLOC_FAIL "Error: malloc failed\n"
+#define PUSH_FAIL "L%u: usage: push integer\n"
+
 /* Prototypes */
-stack_t *pstr(stack_t **stack, unsigned int line_num);
-stack_t *pchar(stack_t **stack, unsigned int line_num);
-stack_t *mod(stack_t **stack, unsigned int line_num);
-stack_t *_div(stack_t **stack, unsigned int line_num);
-stack_t *mul(stack_t **stack, unsigned int line_num);
-stack_t *sub(stack_t **stack, unsigned int line_num);
-stack_t *add(stack_t **stack, unsigned int line_num);
-stack_t *nop(stack_t **stack, unsigned int line_num);
-stack_t *swap(stack_t **stack, unsigned int line_num);
-stack_t *pop(stack_t **stack, unsigned int line_num);
 stack_t *push(stack_t **stack, unsigned int line_num);
 stack_t *pall(stack_t **stack, unsigned int line_num);
-stack_t *op_func(stack_t **stack, char *op_code, unsigned int line_num);
 stack_t *pint(stack_t **stack, unsigned int line_num);
+stack_t *pop(stack_t **stack, unsigned int line_num);
+stack_t *swap(stack_t **stack, unsigned int line_num);
+stack_t *nop(stack_t **stack, unsigned int line_num);
+stack_t *add(stack_t **stack, unsigned int line_num);
+stack_t *sub(stack_t **stack, unsigned int line_num);
+stack_t *_div(stack_t **stack, unsigned int line_num);
+stack_t *mul(stack_t **stack, unsigned int line_num);
+stack_t *mod(stack_t **stack, unsigned int line_num);
+stack_t *pchar(stack_t **stack, unsigned int line_num);
+stack_t *pstr(stack_t **stack, unsigned int line_num);
 void free_stack(stack_t **stack);
-
-#endif /* _MONTY_H_ */
+stack_t *op_func(stack_t **stack, char *op_code, unsigned int line_num);
+#endif

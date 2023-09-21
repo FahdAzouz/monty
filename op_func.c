@@ -1,17 +1,17 @@
 #include "monty.h"
 /**
- * op_func - function to select the correct function to perform
+ * op_func - operations
  *
- * @stack: pointer to the stack
- * @op_code: command to be executed
+ * @stack: stack
+ * @op_code: code
  * @line_num: line number
  *
- * Return: pointer to the stack
+ * Return: corresponding func or exit
  */
 
 stack_t *op_func(stack_t **stack, char *op_code, unsigned int line_num)
 {
-	int j = 0;
+	int i = 0;
 
 	instruction_t ops[] = {
 		{"push", push},
@@ -30,13 +30,13 @@ stack_t *op_func(stack_t **stack, char *op_code, unsigned int line_num)
 		{NULL, NULL}
 	};
 
-	while (ops[j].opcode != NULL)
+	while (ops[i].opcode != NULL)
 	{
-		if (strcmp(ops[j].opcode, op_code) == 0)
+		if (strcmp(ops[i].opcode, op_code) == 0)
 		{
-			return ((ops[j]).f(stack, line_num));
+			return ((ops[i]).f(stack, line_num));
 		}
-		j++;
+		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, op_code);
 	free_stack(stack);

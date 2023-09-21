@@ -1,20 +1,22 @@
 #include "monty.h"
 /**
- * free_stack - frees a stack_t stack
+ * free_stack - free stack
  *
- * @stack: stack to be freed from memory
+ * @stack: stack to be freed
+ *
  * Return: void
  */
 void free_stack(stack_t **stack)
 {
-	stack_t *tmpo;
-	stack_t *h;
+	stack_t *temp;
+	stack_t *head;
 
-	h = *stack;
-	while (h != NULL)
+	head = *stack;
+	while (head != NULL)
 	{
-		tmpo = h;
-		h = h->next;
-		free(tmpo);
+		temp = head;
+		free(temp);
+		head = head->next;
 	}
 }
+

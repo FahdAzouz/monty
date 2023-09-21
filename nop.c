@@ -1,10 +1,9 @@
 #include "monty.h"
 
 /**
- * nop - Does nothing
+ * nop - This function does nothing
  * @stack: Pointer to the stack
  * @line_number: Line number of file
- *
  * Return: Pointer to the stack
  */
 
