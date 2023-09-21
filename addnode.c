@@ -1,12 +1,12 @@
 #include "monty.h"
 /**
- * addnode - adds a new node at the beginning of a stack_t list.
+ * addnode_AZ - adds a new node at the beginning of a stack_t list.
  * @head: stack head
  * @n: value of the new node
  * Return: nothing
 */
 
-void addnode(stack_t **head, int n)
+void addnode_AZ(stack_t **head, int n)
 {
 	stack_t *new_n, *temp;
 

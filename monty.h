@@ -59,14 +59,14 @@ typedef struct instruction_s
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
 void addqueue(stack_t **head, int n);
-void addnode(stack_t **head, int n);
+void addnode_AZ(stack_t **head, int n);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
 void f_pstr(stack_t **head, unsigned int counter);
 void f_pchar(stack_t **head, unsigned int counter);
 void f_mod(stack_t **head, unsigned int counter);
 void f_mul(stack_t **head, unsigned int counter);
-void f_div(stack_t **head, unsigned int counter);
+void qsem(stack_t **head, unsigned int counter);
 void f_sub(stack_t **head, unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
 void add_AZ(stack_t **head, unsigned int counter);
