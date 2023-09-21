@@ -9,7 +9,7 @@
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
-	instruction_t _op[] = {
+	instruction_t opts[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 				{"pop", f_pop},
 				{"swap", f_swap},
@@ -34,16 +34,16 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	if (op[0] == '#' && op)
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (op && _op[j].opcode)
+	while (op && opts[j].opcode)
 	{
-		if (strcmp(op, _op[j].opcode) == 0)
-		{	_op[j].f(stack, counter);
+		if (strcmp(op, opts[j].opcode) == 0)
+		{	opts[j].f(stack, counter);
 			return (0);
 		}
 		j++;
 	}
 
-	if (_op[j].opcode == NULL && op)
+	if (opts[j].opcode == NULL && op)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
