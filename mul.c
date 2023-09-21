@@ -1,27 +1,27 @@
 #include "monty.h"
 
 /**
- * mul - subtract top 2 elements
- * @stack: - stack
+ * mul - multiplies the second top element of the stack with the top element
+ * @stack: - pointer to stack
  * @line_num: - line number
  *
  * Return: stack
  */
 stack_t *mul(stack_t **stack, unsigned int line_num)
 {
-	stack_t *head;
 	int mul = 0;
+	stack_t *h;
 
-	head = *stack;
-	if (head == NULL || head->next == NULL)
+	h = *stack;
+	if (h->next == NULL || h == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_num);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	mul = (head->next->n) * (head->n);
+	mul = (h->next->n) * (h->n);
 	*stack = (*stack)->next;
-	free(head);
+	free(h);
 
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
