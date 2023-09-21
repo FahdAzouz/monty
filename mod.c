@@ -1,16 +1,15 @@
 #include "monty.h"
 
 /**
- * mod - 
- * @stack: - stack
+ * mod - divides the second top element of the stack by the top element
+ * @stack: - pointer to stack
  * @line_num: - line number
- * Return: stack
+ * Return: - pointer to stack with quotient of top two elements
  */
 stack_t *mod(stack_t **stack, unsigned int line_num)
 {
 	int module = 0;
 	stack_t *h;
-
 
 	h = *stack;
 	if (h->next == NULL || h == NULL)
@@ -31,6 +30,7 @@ stack_t *mod(stack_t **stack, unsigned int line_num)
 
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
+
 	(*stack)->n = module;
 	return (*stack);
 }
