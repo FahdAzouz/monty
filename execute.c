@@ -19,7 +19,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"div", qsem},
 				{"mul", dreb},
 				{"mod", hadakmod},
-				{"pchar", f_pchar},
+				{"pchar", pchar_AZ},
 				{"pstr", f_pstr},
 				{"rotl", f_rotl},
 				{"rotr", f_rotr},
