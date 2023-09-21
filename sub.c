@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
-  *f_sub - subtracts the top element of the stack from the second top element
+  *naqiss - subtracts the top element of the stack from the second top element
   *@head: pointer to the head of the stack
   *@counter: line number
   *Return: nothing
  */
-void f_sub(stack_t **head, unsigned int counter)
+void naqiss(stack_t **head, unsigned int counter)
 {
 	int moo, block;
 	stack_t *temp;

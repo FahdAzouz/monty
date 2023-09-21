@@ -67,7 +67,7 @@ void f_pchar(stack_t **head, unsigned int counter);
 void f_mod(stack_t **head, unsigned int counter);
 void f_mul(stack_t **head, unsigned int counter);
 void qsem(stack_t **head, unsigned int counter);
-void f_sub(stack_t **head, unsigned int counter);
+void naqiss(stack_t **head, unsigned int counter);
 void nop_AZ(stack_t **head, unsigned int counter);
 void add_AZ(stack_t **head, unsigned int counter);
 void bedel(stack_t **head, unsigned int counter);

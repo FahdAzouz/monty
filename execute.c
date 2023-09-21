@@ -15,7 +15,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"swap", bedel},
 				{"add", add_AZ},
 				{"nop", nop_AZ},
-				{"sub", f_sub},
+				{"sub", naqiss},
 				{"div", qsem},
 				{"mul", f_mul},
 				{"mod", f_mod},
