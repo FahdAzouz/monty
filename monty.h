@@ -62,7 +62,7 @@ void addqueue(stack_t **head, int n);
 void addnode_AZ(stack_t **head, int n);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
-void f_pstr(stack_t **head, unsigned int counter);
+void ktebstr(stack_t **head, unsigned int counter);
 void pchar_AZ(stack_t **head, unsigned int counter);
 void hadakmod(stack_t **head, unsigned int counter);
 void dreb(stack_t **head, unsigned int counter);
