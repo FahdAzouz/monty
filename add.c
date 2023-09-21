@@ -1,12 +1,12 @@
 #include "monty.h"
 /**
- * f_add - sum the top two elements of the stack and removes the top element
+ * add_AZ - sum the top two elements of the stack and removes the top element
  * @head: stack head pointer
  * @counter: line_number
  * Return: nothing
 */
 
-void f_add(stack_t **head, unsigned int counter)
+void add_AZ(stack_t **head, unsigned int counter)
 {
 	int length = 0, aux;
 	stack_t *head_s;
