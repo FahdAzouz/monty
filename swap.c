@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * f_swap - swaps the top two elements of the stack
+ * bedel - swaps the top two elements of the stack
  * @head: pointer to the head of the stack
  * @counter: line number
  * Return: nothing
 */
 
-void f_swap(stack_t **head, unsigned int counter)
+void bedel(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
 	int length = 0, tmp;
