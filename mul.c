@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * f_mul - multiplies the second top element of the stack with the top element
+ * dreb - multiplies the second top element of the stack with the top element
  * @head: pointer to head of stack
  * @counter: counter for line number
  * Return: no return
 */
-void f_mul(stack_t **head, unsigned int counter)
+void dreb(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
 	int len = 0, tmp;
