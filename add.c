@@ -1,30 +1,32 @@
 #include "monty.h"
-
 /**
- * add - adds top 2 elements
- * @stack: - stack
- * @line_num: - line number
- *
- * Return: stack
- */
-stack_t *add(stack_t **stack, unsigned int line_num)
+ * f_add - adds the top two elements of the stack.
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void f_add(stack_t **head, unsigned int counter)
 {
-	stack_t *head;
-	int sum = 0;
+	stack_t *h;
+	int len = 0, aux;
 
-	head = *stack;
-	if (head == NULL || head->next == NULL)
+	h = *head;
+	while (h)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
-		free_stack(stack);
+		h = h->next;
+		len++;
+	}
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	sum = (head->n) + (head->next->n);
-	*stack = (*stack)->next;
-	free(head);
-
-	if (*stack != NULL)
-		(*stack)->prev = NULL;
-	(*stack)->n = sum;
-	return (*stack);
+	h = *head;
+	aux = h->n + h->next->n;
+	h->next->n = aux;
+	*head = h->next;
+	free(h);
 }
