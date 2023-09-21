@@ -13,13 +13,13 @@ stack_t *add(stack_t **stack, unsigned int line_num)
 	stack_t *h;
 
 	h = *stack;
-	if (h == NULL || h->next == NULL)
+	if (h->next == NULL || h == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	summ = (h->n) + (h->next->n);
+	summ = (h->next->n) + (h->n);
 	*stack = (*stack)->next;
 	free(h);
 
