@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * _div - div top 2 elements
- * @stack: - stack
+ * _div - divides the second top element of the stack by the top element
+ * @stack: - pointer to stack
  * @line_num: - line number
  *
- * Return: stack
+ * Return: - pointer to stack with quotient of top two elements
  */
 stack_t *_div(stack_t **stack, unsigned int line_num)
 {
@@ -13,7 +13,7 @@ stack_t *_div(stack_t **stack, unsigned int line_num)
 	int div = 0;
 
 	head = *stack;
-	if (head == NULL || head->next == NULL)
+	if (head->next == NULL || head == NULL)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_num);
 		free_stack(stack);
@@ -27,10 +27,12 @@ stack_t *_div(stack_t **stack, unsigned int line_num)
 	}
 	div = (head->next->n) / (head->n);
 	*stack = (*stack)->next;
+
 	free(head);
 
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
+
 	(*stack)->n = div;
 	return (*stack);
 }
