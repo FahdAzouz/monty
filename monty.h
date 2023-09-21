@@ -71,7 +71,7 @@ void f_sub(stack_t **head, unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
 void add_AZ(stack_t **head, unsigned int counter);
 void f_swap(stack_t **head, unsigned int counter);
-void f_pop(stack_t **head, unsigned int counter);
+void pop_AZ(stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void pint_AZ(stack_t **head, unsigned int number);
