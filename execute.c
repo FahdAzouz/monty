@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
-* execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
-* @file: poiner to monty file
+* execute - execuuutes the opcode in the line content
+* @stack: pointer to stack
+* @counter: line number
+* @file: file pointer
 * @content: line content
-* Return: no return
+* Return: 0 on success, 1 on failure
 */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
@@ -31,10 +31,10 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	char *op;
 
 	op = strtok(content, " \n\t");
-	if (op && op[0] == '#')
+	if (op[0] == '#' && op)
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (opst[i].opcode && op)
+	while (op && opst[i].opcode)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
 		{	opst[i].f(stack, counter);
@@ -42,7 +42,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		}
 		i++;
 	}
-	if (op && opst[i].opcode == NULL)
+	if (opst[i].opcode == NULL && op)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
