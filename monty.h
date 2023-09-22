@@ -56,8 +56,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void f_queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsigned int counter);
+void queue_AZ(stack_t **head, unsigned int counter);
+void stack_AZ(stack_t **head, unsigned int counter);
 void addqueue(stack_t **head, int n);
 void addnode_AZ(stack_t **head, int n);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);

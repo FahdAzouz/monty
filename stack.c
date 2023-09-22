@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * f_stack - stack mode
+ * stack_AZ - stack mode
  * @head: pointer to head of stack
  * @counter: counter for line number
  * Return: nothing
 */
 
-void f_stack(stack_t **head, unsigned int counter)
+void stack_AZ(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;

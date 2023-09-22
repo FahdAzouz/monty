@@ -36,12 +36,12 @@ void addqueue(stack_t **head, int n)
 }
 
 /**
- * f_queue - change the mode to queue
+ * queue_AZ - change the mode to queue
  * @head: pointer to the head of the stack
  * @counter: line number
  * Return: nothing
 */
-void f_queue(stack_t **head, unsigned int counter)
+void queue_AZ(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
